@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===== SEO (edit title, description, URL after you deploy) ===== -->
+  <title>Vishal Kumar Sharma | CSE Student, AI/ML and Web Developer</title>
+  <meta name="description" content="Portfolio of Vishal Kumar Sharma, a B.Tech CSE student at JECRC University, Jaipur, interested in AI/ML, 2D game design and quant. Projects, skills and contact." />
+  <meta name="author" content="Vishal Kumar Sharma" />
+  <meta name="keywords" content="Vishal Kumar Sharma, portfolio, CSE student, JECRC University, AI, ML, web developer, Jaipur" />
+  <meta name="theme-color" content="#0a0d1f" />
+
+  <!-- Open Graph (link previews on LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vishal Kumar Sharma | Portfolio" />
+  <meta property="og:description" content="CSE student building with AI/ML, web and 2D games. See my projects and get in touch." />
+  <!-- <meta property="og:url" content="https://YOUR-USERNAME.github.io/portfolio/" /> -->
+  <!-- <meta property="og:image" content="assets/preview.png" /> -->
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Favicon: an emoji, no image file needed. Change the emoji in the URL if you like. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E" />
+
+  <!-- Font: Space Grotesk (swap for Poppins/Inter by changing this link and --font in style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Apply the saved theme before first paint so there is no flash -->
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner" aria-label="Main">
+      <a href="#hero" class="brand" id="brandName">Vishal.</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-nav>About</a></li>
+        <li><a href="#skills" data-nav>Skills</a></li>
+        <li><a href="#projects" data-nav>Projects</a></li>
+        <li><a href="#education" data-nav>Education</a></li>
+        <li><a href="#achievements" data-nav>Achievements</a></li>
+        <li><a href="#resume" data-nav>Resume</a></li>
+        <li><a href="#contact" data-nav>Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Switch between dark and light theme" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= 1. HERO ================= -->
+    <section class="hero" id="hero">
+      <canvas id="particles" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-hello">Hi, I'm</p>
+          <h1 id="heroName">Vishal Kumar Sharma</h1>
+          <p class="hero-role">
+            <span id="typed" aria-live="off"></span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero-tagline" id="heroTagline"></p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" id="resumeBtnHero" href="resume.pdf" download>Download Resume</a>
+            <a class="btn btn-ghost" href="#projects">View Projects</a>
+          </div>
+        </div>
+
+        <!-- Floating laptop illustration (inline SVG, no image needed) -->
+        <div class="hero-art" aria-hidden="true">
+          <svg class="laptop" viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gScreen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#151a3b"/><stop offset="1" stop-color="#0d1129"/>
+              </linearGradient>
+              <linearGradient id="gAccent" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#a78bfa"/>
+              </linearGradient>
+              <linearGradient id="gBase" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2a3160"/><stop offset="1" stop-color="#171b3d"/>
+              </linearGradient>
+            </defs>
+            <!-- glow -->
+            <ellipse cx="260" cy="340" rx="200" ry="22" fill="url(#gAccent)" opacity=".25"/>
+            <!-- lid -->
+            <rect x="80" y="30" width="360" height="236" rx="16" fill="#1d2350" stroke="url(#gAccent)" stroke-width="2"/>
+            <rect x="94" y="44" width="332" height="208" rx="8" fill="url(#gScreen)"/>
+            <!-- window dots -->
+            <circle cx="112" cy="62" r="4" fill="#f87171"/><circle cx="126" cy="62" r="4" fill="#fbbf24"/><circle cx="140" cy="62" r="4" fill="#34d399"/>
+            <!-- code lines -->
+            <g font-family="Consolas, Menlo, monospace" font-size="13">
+              <text x="112" y="96"  fill="#a78bfa">def</text><text x="144" y="96" fill="#38bdf8">train</text><text x="184" y="96" fill="#cbd5e1">(model, data):</text>
+              <text x="128" y="120" fill="#94a3b8">for</text><text x="156" y="120" fill="#cbd5e1">epoch in range(</text><text x="262" y="120" fill="#fbbf24">10</text><text x="278" y="120" fill="#cbd5e1">):</text>
+              <text x="144" y="144" fill="#cbd5e1">loss = model.fit(data)</text>
+              <text x="144" y="168" fill="#38bdf8">print</text><text x="180" y="168" fill="#cbd5e1">(</text><text x="186" y="168" fill="#34d399">"loss:"</text><text x="236" y="168" fill="#cbd5e1">, loss)</text>
+              <text x="112" y="204" fill="#a78bfa">return</text><text x="158" y="204" fill="#cbd5e1">model</text>
+            </g>
+            <rect x="112" y="222" width="9" height="16" fill="#38bdf8" class="svg-caret"/>
+            <!-- base -->
+            <path d="M52 266 H468 L480 292 Q482 304 468 304 H52 Q38 304 40 292 Z" fill="url(#gBase)" stroke="#3b4380" stroke-width="1.5"/>
+            <rect x="214" y="268" width="92" height="8" rx="4" fill="#0d1129"/>
+          </svg>
+
+          <!-- floating chips around the laptop -->
+          <span class="float-chip chip-a">&lt;/&gt;</span>
+          <span class="float-chip chip-b">{ AI }</span>
+          <span class="float-chip chip-c">py</span>
+          <span class="float-chip chip-d">git</span>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll to About section">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= 2. ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal">About me</h2>
+        <div class="about-grid">
+          <div class="about-photo reveal">
+            <!-- PHOTO: put your image at assets/photo.jpg (see README). It replaces this placeholder automatically. -->
+            <div class="photo-ring">
+              <img id="profilePhoto" src="assets/photo.jpg" alt="Portrait of Vishal Kumar Sharma" width="260" height="260" hidden />
+              <div class="photo-placeholder" id="photoPlaceholder">
+                <svg viewBox="0 0 24 24" width="84" height="84" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+                <span>Add your photo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-body reveal">
+            <p id="aboutBio"></p>
+            <p id="aboutOpen" class="about-open"></p>
+            <ul class="facts" id="quickFacts"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. SKILLS ================= -->
+    <section class="section alt" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+        <p class="section-sub reveal">The bar shows how comfortable I am with each one.</p>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= 4. PROJECTS ================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= 5. EDUCATION ================= -->
+    <section class="section alt" id="education">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Education</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- ================= 6. ACHIEVEMENTS ================= -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <h2 class="section-title reveal">Achievements and certifications</h2>
+        <div class="ach-grid" id="achGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= 7. RESUME ================= -->
+    <section class="section alt" id="resume">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Resume</h2>
+        <div class="resume-box reveal">
+          <!-- Preview: shows resume.pdf if the file exists next to index.html, otherwise a note. -->
+          <iframe id="resumeFrame" title="Resume preview" hidden></iframe>
+          <div class="resume-empty" id="resumeEmpty">
+            <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+            <p>Your resume preview appears here.</p>
+            <p class="muted">Save your PDF as <code>resume.pdf</code> in this folder.</p>
+          </div>
+        </div>
+        <div class="resume-actions reveal">
+          <a class="btn btn-primary" id="resumeBtn" href="resume.pdf" download>Download Resume (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. CONTACT ================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Contact</h2>
+        <p class="section-sub reveal">Open to internships, hackathons, open-source and freelance work. Send a message and I'll reply.</p>
+
+        <div class="contact-grid">
+          <ul class="contact-list reveal" id="contactList"></ul>
+
+          <!-- Form: opens your email app with the message filled in (no backend needed). See script.js CONFIG.formEndpoint to send directly instead. -->
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <label for="cName">Name</label>
+            <input id="cName" name="name" type="text" autocomplete="name" required />
+
+            <label for="cEmail">Email</label>
+            <input id="cEmail" name="email" type="email" autocomplete="email" required />
+
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" name="message" rows="5" required></textarea>
+
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footerText"></p>
+    <button class="to-top" id="toTop" aria-label="Back to top">Back to top</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
